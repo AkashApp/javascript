@@ -102,3 +102,12 @@ console.log(arr);
 console.log(arr7);
 
 // ------------------------------------------------------------------------------------
+
+//  difference between map and forEach
+//  map returns a new array
+//  forEach does not return anything it modify the original array
+//  in map we can chain any other methods to it
+//  in forEach we cannot chain any other methods to it
+
+// ------------------------------------------------------------------------------------
+
