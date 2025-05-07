@@ -76,3 +76,31 @@ function adding(a){
     }
 }
 console.log("addition ",adding(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)());
+
+// ------------------------------------------------------------------------------------
+
+// Currying vs Partial Application
+// Partial application transform a function into another function  with small arity
+
+// partial application
+function partialSum(a){
+    return function(b,c){
+        return a+b+c;
+    }
+}
+const x = partialSum(10);
+x(20, 30);
+// OR
+partialSum(10)(20, 30);
+
+// currying
+function curriedSum(a){
+    return function(b){
+        return function(c){
+            return a+b+c;
+        }
+    }
+}
+curriedSum(10)(20)(30);
+
+// ------------------------------------------------------------------------------------
