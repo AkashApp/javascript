@@ -104,3 +104,14 @@ function curriedSum(a){
 curriedSum(10)(20)(30);
 
 // ------------------------------------------------------------------------------------
+
+// Manipulating DOM
+//  In HTML there is <h1 id="title">Hello</h1>
+
+function updateElementText(id){
+    return function (content) {
+        document.querySelector("#" + id).textContent = content;
+    }
+}
+const updateTitle = updateElementText("title");
+updateTitle("Goodbye");
