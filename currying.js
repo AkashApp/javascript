@@ -6,3 +6,21 @@
 //  to callable as that f(a)(b)
 // curried functions are constructed by chaining closures by immediately
 //  returning there inner functions symmetrically
+
+// ------------------------------------------------------------------------------------
+
+// example
+// normal function
+function add(a, b) {
+    return a+b;
+}
+add(2,3);
+// curried function
+function curriedAdd(a) {
+    return function(b) {
+        return a+b;
+    }
+}
+curriedAdd(2)(3);
+
+// ------------------------------------------------------------------------------------
