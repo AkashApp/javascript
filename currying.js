@@ -64,3 +64,15 @@ evaluate("sum")(4)(2);
 evaluate("multiply")(4)(2);
 evaluate("subtract")(4)(2);
 evaluate("divide")(4)(2);
+
+// ------------------------------------------------------------------------------------
+
+// Infinite currying sum(1)(2)(3)....(n)
+
+function adding(a){
+    return function(b){
+        if(b) return adding(a+b);
+        return a;
+    }
+}
+console.log("addition ",adding(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)());
