@@ -115,3 +115,23 @@ function updateElementText(id){
 }
 const updateTitle = updateElementText("title");
 updateTitle("Goodbye");
+
+// ------------------------------------------------------------------------------------
+
+//  curry() implementation
+// converts f(a,b,c) into f(a)(b)(c)
+
+function curry(fn){
+    return function curriedFn(...args){
+        if(args.length >= fn.length){
+            return fn(...args);
+        } else {
+            return function(...next){
+                return curriedFn(...args, ...next);
+            };
+        }
+    };
+}
+const normalSum = (a,b,c) => a+b+c;
+const curriedSum = curry(normalSum);
+curriedSum(1)(2)(3);
