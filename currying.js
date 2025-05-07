@@ -24,3 +24,20 @@ function curriedAdd(a) {
 curriedAdd(2)(3);
 
 // ------------------------------------------------------------------------------------
+
+// why should we use currying 
+// to avoid passing same arguments over and over again, to create higher order functions,
+//  to make your function pure and less prone to errors and to make your code more readable
+
+// ------------------------------------------------------------------------------------
+
+// sum(2)(6)(8);
+
+function sum(a){
+    return function(b){
+        return function(c){
+            return a+b+c;
+        }
+    }
+};
+sum(2)(6)(8);
