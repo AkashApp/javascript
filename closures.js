@@ -54,4 +54,79 @@ a(); // 0 1 2
 
 // ------------------------------------------------------------------------------------
 
+// private variables
 
+function counter(){
+    var count = 0;
+
+    function add(increment){
+        count += increment;
+    }
+    function get(){
+        return count;
+    }
+    return {
+        add,
+        get
+    }
+}
+
+const counter1 = counter();
+counter1.add(1);
+counter1.add(2);
+console.log(counter1.get());
+
+// ------------------------------------------------------------------------------------
+
+// Module pattern
+
+var Module = (function(){
+    function privateMethod(){
+        // do something
+        console.log('private');
+    }
+
+    return {
+        publicMethod: function(){
+            // can callprivateMethod();
+            console.log("public")
+        }
+    }
+})();
+
+Module.publicMethod(); // it will print public
+Module.privateMethod(); // it will give error
+
+// ------------------------------------------------------------------------------------
+
+// Make this run only once
+
+let view;
+function likeTheVideo(){
+    view = "liked";
+    console.log("Subscribe now and ",view);
+}
+likeTheVideo(); // Subscribe now and liked
+likeTheVideo(); // Subscribe now and liked
+likeTheVideo(); // Subscribe now and liked
+
+
+function likeTheVideoOnce(){
+    let called = 0;
+
+    return function () {
+        if(called > 0){
+            console.log("Already Subscribed and liked");
+        } else {
+            view = "liked";
+            console.log("Subscribe now and ",view);
+            called++;
+        }
+    };
+}
+let isSubscribed = likeTheVideoOnce();
+isSubscribed(); // Subscribe now and liked
+isSubscribed(); // Already Subscribed and liked
+isSubscribed(); // Already Subscribed and liked
+
+// ------------------------------------------------------------------------------------
