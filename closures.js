@@ -14,3 +14,44 @@ function abc() {
     xyz();
 }
 abc();
+
+// ------------------------------------------------------------------------------------
+
+// setTimeout Output
+
+function a(){
+    for(var i=0; i<3; i++){
+        setTimeout(function log(){
+            console.log(i);
+        }, i * 1000);
+    }
+}
+a(); // 3 3 3
+
+// using let instead of var
+function a(){
+    for(let i=0; i<3; i++){
+        setTimeout(function log(){
+            console.log(i);
+        }, i * 1000);
+    }
+}
+a(); // 0 1 2 
+
+
+// using closure and var
+function a(){
+    for(var i=0; i<3; i++){
+        function inner(i){
+            setTimeout(function log(){
+                console.log(i);
+            }, i * 1000);
+        }
+    }
+    inner(i)
+}
+a(); // 0 1 2 
+
+// ------------------------------------------------------------------------------------
+
+
