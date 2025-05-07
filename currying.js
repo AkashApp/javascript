@@ -43,3 +43,24 @@ function sum(a){
 sum(2)(6)(8);
 
 // ------------------------------------------------------------------------------------
+
+// evaluate("sum")(4)(2)
+// evaluate("multiply")(4)(2)
+// evaluate("subtract")(4)(2)
+// evaluate("divide")(4)(2)
+
+function evaluate(operation){
+    return function(a){
+        return function(b){
+            if(operation === 'sum') return a+b;
+            else if(operation === 'multiply') return a*b;
+            else if(operation === 'subtract') return a-b;
+            else if(operation === 'divide') return a/b;
+            else return null;
+        }
+    }
+}
+evaluate("sum")(4)(2);
+evaluate("multiply")(4)(2);
+evaluate("subtract")(4)(2);
+evaluate("divide")(4)(2);
