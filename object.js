@@ -11,3 +11,26 @@ const user = {
 };
 const strObj = JSON.stringify(user);
 console.log(JSON.parse(strObj));
+
+// ------------------------------------------------------------------------------------
+
+// What is output
+
+function changeAgeAndReference(person) {
+    person.age = 25;
+    person = {
+        name: "John",
+        age: 30,
+    };
+    return person;
+};
+
+const person1 = {
+    name: "Akash",
+    age: 20,
+};
+const person2 = changeAgeAndReference(person1);
+console.log(person1);
+console.log(person2);
+
+// ------------------------------------------------------------------------------------
