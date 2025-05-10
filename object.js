@@ -34,3 +34,22 @@ console.log(person1);
 console.log(person2);
 
 // ------------------------------------------------------------------------------------
+
+// How to deep copy an object
+
+let userObj = {
+    name: "Akash",
+    age: 20,
+};
+
+const objClone = Object.assign({}, userObj);
+objClone.name = "John";
+console.log(objClone);
+
+const objParseClone = JSON.parse(JSON.stringify(userObj));
+objParseClone.name = "John";
+console.log(objParseClone);
+
+const objDestructClone = { ...userObj };
+objDestructClone.name = "John";
+console.log(objDestructClone);
