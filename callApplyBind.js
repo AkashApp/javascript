@@ -3,7 +3,7 @@
 var obj = {name:"akash", age:20};
 
 function sayHello(age, proffesion) {
-    return "Hello " + this.name + " your age is " + age + " and he is " + proffesion;
+    return "Hello " + this.name + " your age is " + age + " and your proffesion is " + proffesion;
 };
 console.log(sayHello.call(obj,25, "Softerware Engineer"));
 
