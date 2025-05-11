@@ -9,3 +9,8 @@ console.log(sayHello.call(obj,25, "Softerware Engineer"));
 
 // apply
 console.log(sayHello.apply(obj,[25, "Softerware Engineer"]));
+
+
+// bind
+const bindFirst = sayHello.call(obj);
+console.log(bindFirst(25, "Softerware Engineer"));
