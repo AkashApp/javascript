@@ -55,3 +55,18 @@ Function.prototype.myCall = function(context = {}, ...args) {
 purchaseCar.myCall(car1, "USD", 100000);
 
 // ------------------------------------------------------------------------------------
+
+// polyfill for apply
+
+Function.prototype.myApply = function(context = {}, args = []) {
+    if(typeof this !== "function") throw new Error("Not a function");
+
+    if(Array.isArray(args)){
+        throw new Error("Second argument must be an array");
+    }
+    context.fn = this;
+    context.fn(...args);
+};
+
+purchaseCar.myApply(car1, ["USD", 100000]);
+
