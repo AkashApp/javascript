@@ -32,3 +32,26 @@ console.log(array);
 const numbers = [5, 6, 2, 3, 7];
 console.log(Math.min.apply(null, numbers));
 console.log(Math.max.apply(null, numbers));
+
+// ------------------------------------------------------------------------------------
+
+// polyfill for call
+
+let car1 = {
+    color: "Red",
+    company: "Ferrari"
+};
+
+function purchaseCar(currency, price) {
+    console.log(`I bought ${this.color} ${this.company} for ${currency} ${price}`);
+};
+
+Function.prototype.myCall = function(context = {}, ...args) {
+    if(typeof this !== "function") return console.log("Not a function");
+    context.fn = this;
+    context.fn(...args);
+};
+
+purchaseCar.myCall(car1, "USD", 100000);
+
+// ------------------------------------------------------------------------------------
