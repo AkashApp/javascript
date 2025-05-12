@@ -27,3 +27,8 @@ console.log(array);
 
 
 // ------------------------------------------------------------------------------------
+
+// Find min/max number in an array
+const numbers = [5, 6, 2, 3, 7];
+console.log(Math.min.apply(null, numbers));
+console.log(Math.max.apply(null, numbers));
