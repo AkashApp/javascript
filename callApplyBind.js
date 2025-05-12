@@ -14,3 +14,16 @@ console.log(sayHello.apply(obj,[25, "Softerware Engineer"]));
 // bind
 const bindFirst = sayHello.call(obj);
 console.log(bindFirst(25, "Softerware Engineer"));
+
+// ------------------------------------------------------------------------------------
+
+// Append an array to another array
+
+const array = ["a", "b"];
+const elements = ["c", "d"];
+
+array.push.apply(array, elements);
+console.log(array);
+
+
+// ------------------------------------------------------------------------------------
