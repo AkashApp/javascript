@@ -70,3 +70,17 @@ Function.prototype.myApply = function(context = {}, args = []) {
 
 purchaseCar.myApply(car1, ["USD", 100000]);
 
+// ------------------------------------------------------------------------------------
+
+// polyfill for bind
+
+Function.prototype.myBind = function(context = {}, ...args) {
+    if(typeof this !== "function") return console.log("Not a function");
+    context.fn = this;
+    return function(...nextArgs) {
+        return context.fn(...args, ...nextArgs);
+    };
+};
+
+const newFunc = purchaseCar.myBind(car1, "USD", 100000);
+console.log(newFunc());
