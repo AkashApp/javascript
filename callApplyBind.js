@@ -84,3 +84,5 @@ Function.prototype.myBind = function(context = {}, ...args) {
 
 const newFunc = purchaseCar.myBind(car1, "USD", 100000);
 console.log(newFunc());
+
+// ------------------------------------------------------------------------------------
