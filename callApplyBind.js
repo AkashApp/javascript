@@ -86,3 +86,25 @@ const newFunc = purchaseCar.myBind(car1, "USD", 100000);
 console.log(newFunc());
 
 // ------------------------------------------------------------------------------------
+
+// what will be output
+
+function abc() {
+    console.log(this.name);
+}
+
+const obj1 = {
+    name: "Akash",
+};
+
+abc.call(obj1);
+abc.apply(obj1);
+abc.bind(obj1)();
+
+// output
+// Akash
+// Akash
+// Akash
+
+// ------------------------------------------------------------------------------------
+
