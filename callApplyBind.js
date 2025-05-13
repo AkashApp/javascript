@@ -114,3 +114,10 @@ abc.bind(obj1)();
 // bind takes arguments as comma separated values. And it is not called immediately.
 
 // ------------------------------------------------------------------------------------
+
+// use cases of call, apply, bind
+// call is used when you want to call a function with a specific context.
+// apply is used when you want to call a function with a specific context and arguments as an array.
+// bind is used when you want to create a new function with a specific context and arguments.
+
+// ------------------------------------------------------------------------------------
