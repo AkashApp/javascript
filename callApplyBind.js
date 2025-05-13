@@ -108,3 +108,9 @@ abc.bind(obj1)();
 
 // ------------------------------------------------------------------------------------
 
+// what is the difference between call, apply and bind?
+// call takes arguments as comma separated values.
+// apply takes arguments as an array.
+// bind takes arguments as comma separated values. And it is not called immediately.
+
+// ------------------------------------------------------------------------------------
